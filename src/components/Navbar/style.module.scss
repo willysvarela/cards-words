@@ -1,0 +1,6 @@
+@use "@/styles/variables.scss" as *;
+.navbar {
+    height: 60px;
+    background-color: $purple-80;
+    padding: 0 $spacing-m;
+}

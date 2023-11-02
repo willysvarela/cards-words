@@ -1,0 +1,18 @@
+@use "@/styles/variables.scss" as *;
+.optionsForm {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    gap: $spacing-l;
+}
+.title {
+    font-size: $text-large;
+}
+.link {
+    font-size: $text-medium;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

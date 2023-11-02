@@ -1,0 +1,13 @@
+@use "./functions.scss" as *;
+
+@font-face {
+    font-family: "Lilita One";
+    src: url("LilitaOne-Regular.ttf") format("truetype");
+}
+
+* {
+    color: white;
+}
+a {
+    text-decoration: none;
+}

@@ -1,0 +1,1 @@
+export const TEAMS = { teamA: 'yellow', teamB: 'pink'};

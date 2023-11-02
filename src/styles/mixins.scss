@@ -1,0 +1,7 @@
+@import "./variables.scss";
+@mixin shadow-m {
+    box-shadow: 4px 4px 10px $black-25;
+}
+@mixin shadow-l {
+    box-shadow: 5px 7px 10px $black-25;
+}

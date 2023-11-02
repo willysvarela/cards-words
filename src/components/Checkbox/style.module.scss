@@ -1,0 +1,14 @@
+@import "@/styles/variables";
+.checkbox {
+    display: flex;
+    align-items: center;
+    gap: $spacing-s;
+    input {
+        width: $text-medium;
+        height: $text-medium;
+    }
+    label {
+        text-transform: uppercase;
+        font-size: $text-medium;
+    }
+}

@@ -1,0 +1,31 @@
+@use "@/styles/functions.scss" as *;
+@import "@/styles/variables.scss";
+.button {
+    all: unset;
+    max-width: rem(280px);
+    text-transform: uppercase;
+    padding: 8px 48px;
+    background-color: $green;
+    font-size: $text-large;
+    text-align: center;
+    cursor: pointer;
+    &:hover,
+    &:active {
+        background-color: $green-80;
+    }
+    &.button-green,
+    &.button-default {
+        background-color: $green;
+        &:hover,
+        &:active {
+            background-color: $green-80;
+        }
+    }
+    &.button-orange {
+        background-color: $orange;
+        &:hover,
+        &:active {
+            background-color: $orange-80;
+        }
+    }
+}

@@ -1,0 +1,19 @@
+@use "@/styles/mixins.scss" as *;
+@import "@/styles/variables.scss";
+.input {
+    display: flex;
+    flex-direction: column;
+    input {
+        color: $black;
+        font-size: $text-medium;
+        border: none;
+        @include shadow-l();
+        padding: $spacing-s $spacing-m;
+    }
+    label {
+        font-size: $text-medium;
+        text-transform: uppercase;
+        margin-bottom: $spacing-s;
+    }
+    width: 100%;
+}

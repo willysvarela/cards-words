@@ -1,0 +1,12 @@
+@import "@/styles/variables.scss";
+.container {
+    height: 100vh;
+    width: 100%;
+    background-color: $purple;
+    .innerContainer {
+        max-width: 500px;
+        margin: auto;
+        height: 100%;
+        padding: 0;
+    }
+}

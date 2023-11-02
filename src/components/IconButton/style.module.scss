@@ -1,0 +1,37 @@
+@import "@/styles/variables.scss";
+.iconButton {
+    all: unset;
+    background-color: $white;
+    padding: $spacing-m;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: $spacing-xxxl;
+    height: $spacing-xxxl;
+    cursor: pointer;
+    box-shadow: 4px 4px 10px $black-25;
+    transition: 0.1s;
+    &:hover,
+    &:active {
+        background-color: $white-80;
+    }
+    &:active {
+        transform: scale3d(0.95, 0.95, 0.95);
+    }
+    .icon {
+        fill: $black;
+
+        width: $spacing-xxl;
+        height: $spacing-xxl;
+        &.red {
+            fill: $orange;
+        }
+        &.yellow {
+            fill: $yellow;
+        }
+        &.green {
+            fill: $green;
+        }
+    }
+}

@@ -1,0 +1,49 @@
+@import "@/styles/variables.scss";
+.card {
+    background-color: $white;
+    max-width: 300px;
+    margin: auto;
+    .header {
+        background-color: $yellow;
+        text-transform: uppercase;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: $text-large;
+        padding: $spacing-m 0;
+    }
+    .forbiddenWords {
+        display: flex;
+        flex-direction: column;
+        gap: $spacing-l;
+        span:first-child {
+            margin-top: $spacing-l;
+        }
+        span:last-child {
+            margin-bottom: $spacing-l;
+        }
+        span {
+            display: flex;
+            padding: $spacing-s;
+            text-align: center;
+            color: $black;
+            text-transform: uppercase;
+            height: $spacing-xl;
+            justify-content: center;
+            align-items: center;
+            font-size: $text-large;
+        }
+    }
+
+    &.teamA {
+        .header {
+            background-color: $yellow;
+        }
+    }
+    &.teamB {
+        .header {
+            background-color: $pink;
+        }
+    }
+}

@@ -1,0 +1,38 @@
+@import "@/styles/variables.scss";
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .timer {
+        font-size: $text-large;
+    }
+    .score {
+        filter: drop-shadow(4, 4, 10, $black-25);
+        font-size: $text-medium;
+        .scoreA {
+            color: $yellow;
+        }
+        .scoreB {
+            color: $pink;
+        }
+    }
+}
+.teamTitle {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: $text-large;
+    text-transform: uppercase;
+    margin-bottom: $spacing-xxl;
+    & .teamA {
+        color: $yellow;
+    }
+    & .teamB {
+        color: $pink;
+    }
+}
+.buttons {
+    margin-top: $spacing-xxxl;
+    display: flex;
+    justify-content: space-around;
+}
