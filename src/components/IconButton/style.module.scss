@@ -19,6 +19,13 @@
     &:active {
         transform: scale3d(0.95, 0.95, 0.95);
     }
+    &:disabled {
+        background-color: #ccc;
+        .icon {
+            fill: grey !important;
+        }
+        transform: none;
+    }
     .icon {
         fill: $black;
 

@@ -1,4 +1,4 @@
-const { WORDS_INDEX_USED } = require("./../app/play/cards");
+const { WORDS_INDEX_USED } = require("../app/play/PlaySection/cards");
 const { clearValue } = require("./../utils/localStorage");
 
 global.localStorage = {
