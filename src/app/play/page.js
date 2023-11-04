@@ -61,7 +61,7 @@ export default function Play() {
   return (
     <div>
       <Navbar className={style.navbar}>
-        <Timer className={style.timer} onFinishTimer={onFinishTimer} active={currentSection === SECTIONS.play} initialTime={5} />
+        <Timer className={style.timer} onFinishTimer={onFinishTimer} active={currentSection === SECTIONS.play} initialTime={60} />
         <span className={style.score}>
           <span className={style.scoreA}>{scores[TEAMS.teamA]}</span>/
           <span className={style.scoreB}>{scores[TEAMS.teamB]}</span>
@@ -73,7 +73,7 @@ export default function Play() {
       {currentSection === SECTIONS.pass && <PassSection team={currentTeam} turnScore={turnScore} onStart={onStart} onFinishGame={onFinishGame} />}
       {currentSection === SECTIONS.loading && <LoadingSection team={currentTeam} onFinished={onFinishedLoading} />}
       
-      {currentSection === SECTIONS["game-over"] && <GameOverSection team={currentTeam} />}
+      {currentSection === SECTIONS["game-over"] && <GameOverSection scoreA={scores[TEAMS.teamA]} scoreB={scores[TEAMS.teamB]} />}
     </Main>
     </div>
   )

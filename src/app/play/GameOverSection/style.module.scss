@@ -1,0 +1,62 @@
+@use "@/styles/mixins" as *;
+@import "@/styles/variables";
+.banner {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: $spacing-l 0;
+    .score {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: $spacing-xl 0;
+        @include shadow-l;
+
+        span:nth-child(1) {
+            font-size: $text-large;
+        }
+        span:last-child {
+            font-size: $text-title;
+        }
+        &.teamA {
+            @include background-team-a;
+        }
+        &.teamB {
+            @include background-team-b;
+        }
+    }
+}
+.winner {
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .draw {
+        background-color: $green;
+        width: 100%;
+        text-align: center;
+    }
+    span:first-child {
+        font-size: $text-large;
+    }
+    div {
+        padding: $spacing-l;
+        font-size: $text-large;
+        spacing: 0 $spacing-2xl;
+        margin-top: $spacing-l;
+        @include shadow-l;
+        &.teamA {
+            @include background-team-a;
+        }
+        &.teamB {
+            width: 100%;
+            text-align: center;
+            @include background-team-b;
+        }
+    }
+}
+.button {
+    margin-top: $spacing-2xl;
+    text-align: center;
+}
