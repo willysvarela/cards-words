@@ -11,24 +11,21 @@ import PlaySection from "./PlaySection";
 import PassSection from "./PassSection";
 import GameOverSection from "./GameOverSection";
 import LoadingSection from "./LoadingSection";
+import Timer from "@/components/Timer";
 
 
 export default function Play() {
   const [turnScore, setTurnScore] = useState(0);
   const [scores, setScores] = useState({[TEAMS.teamA]: 0, [TEAMS.teamB]: 0});
-  const [timer, setTimer] = useState('00:00');
   const [currentTeam, setCurrentTeam] = useState(TEAMS.teamA);
-  const [currentSection, setCurrentSection] = useState(SECTIONS.play);
+  const [currentSection, setCurrentSection] = useState(SECTIONS.loading);
 
   const onHit = () => {
-    console.log({hit: scores});
     setScores(oldValue => ({ ...oldValue, [currentTeam]: oldValue[currentTeam] + 1}));
     setTurnScore(oldValue => oldValue+1);
   }
 
   const onFail = () => {
-    setCurrentTeam(oldTeam => oldTeam === TEAMS.teamA ? TEAMS.teamB : TEAMS.teamA);
-    setTurnScore(0);
     setCurrentSection(SECTIONS.pass);
   }
 
@@ -44,10 +41,27 @@ export default function Play() {
     setCurrentSection(SECTIONS.play);
   }
 
+  const onFinishTimer = (e) => {
+    console.log({ test: 'test', e });
+    setCurrentSection(SECTIONS.pass);
+  }
+
+  const startNewTurn = () => {
+    setTurnScore(0);
+    setCurrentTeam(oldTeam => oldTeam === TEAMS.teamA ? TEAMS.teamB : TEAMS.teamA);
+  }
+
+  useEffect(() => {
+    if(currentSection === SECTIONS.play) {
+    }
+    if(currentSection === SECTIONS.loading) {
+      startNewTurn();
+    }
+  }, [currentSection]);
   return (
     <div>
       <Navbar className={style.navbar}>
-        <span className={style.timer}>{timer}</span>
+        <Timer className={style.timer} onFinishTimer={onFinishTimer} active={currentSection === SECTIONS.play} initialTime={5} />
         <span className={style.score}>
           <span className={style.scoreA}>{scores[TEAMS.teamA]}</span>/
           <span className={style.scoreB}>{scores[TEAMS.teamB]}</span>
@@ -56,7 +70,7 @@ export default function Play() {
       <Main>
 
       {currentSection === SECTIONS.play && <PlaySection team={currentTeam} onHit={onHit} onFail={onFail} />}
-      {currentSection === SECTIONS.pass && <PassSection team={currentTeam} onStart={onStart} onFinishGame={onFinishGame} />}
+      {currentSection === SECTIONS.pass && <PassSection team={currentTeam} turnScore={turnScore} onStart={onStart} onFinishGame={onFinishGame} />}
       {currentSection === SECTIONS.loading && <LoadingSection team={currentTeam} onFinished={onFinishedLoading} />}
       
       {currentSection === SECTIONS["game-over"] && <GameOverSection team={currentTeam} />}

@@ -9,8 +9,8 @@ const Button = ({onClick, children, color, as, href}) => {
   const buttonColor = BUTTON_COLOR[color] ?? 'button-default';
   return (
     as === 'link' ?
-    <Link href={href}>
-    <button className={`${style.button} ${style[buttonColor]}`} onClick={onClick}>{children}</button>
+    <Link href={href} className={`${style.button} ${style[buttonColor]}`} onClick={onClick}>
+      {children}
     </Link>
     :
     <button className={`${style.button} ${style[buttonColor]}`} onClick={onClick}>{children}</button>

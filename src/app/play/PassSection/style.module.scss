@@ -1,0 +1,43 @@
+@use "@/styles/mixins.scss" as *;
+@import "@/styles/variables.scss";
+.passSection {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.banner {
+    display: flex;
+    flex-direction: column;
+    padding: $spacing-l 0;
+    align-items: center;
+    width: 100%;
+    gap: $spacing-m;
+    margin-bottom: $spacing-2xl;
+    @include background-team-a;
+    .turnLabel {
+        font-size: $text-large;
+        text-transform: uppercase;
+    }
+    .turnScore {
+        font-size: $text-title;
+    }
+    &.teamA {
+        @include background-team-a;
+    }
+    &.teamB {
+        @include background-team-b;
+    }
+}
+
+.teamLabel {
+    margin: $spacing-l 0;
+    font-size: $text-large;
+    text-transform: uppercase;
+    .teamA {
+        @include color-team-a;
+    }
+    .teamB {
+        @include color-team-b;
+    }
+}

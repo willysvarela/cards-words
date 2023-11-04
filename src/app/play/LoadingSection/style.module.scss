@@ -1,0 +1,30 @@
+@use "@/styles/mixins" as *;
+@import "@/styles/variables";
+
+.banner {
+    padding: $spacing-2xl 0;
+    text-transform: uppercase;
+    font-size: $text-large;
+    text-align: center;
+    &.teamA {
+        @include background-team-a;
+    }
+    &.teamB {
+        @include background-team-b;
+    }
+}
+
+.timer {
+    width: 100%;
+    text-align: center;
+    margin-top: $spacing-xl;
+    display: flex;
+    flex-direction: column;
+    text-transform: uppercase;
+    .title {
+        font-size: $text-large;
+    }
+    .time {
+        font-size: $text-title;
+    }
+}

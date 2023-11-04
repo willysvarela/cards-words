@@ -1,3 +1,4 @@
+@use "@/styles/mixins" as *;
 @import "@/styles/variables.scss";
 .navbar {
     display: flex;
@@ -10,10 +11,10 @@
         filter: drop-shadow(4, 4, 10, $black-25);
         font-size: $text-medium;
         .scoreA {
-            color: $yellow;
+            @include color-team-a;
         }
         .scoreB {
-            color: $pink;
+            @include color-team-b;
         }
     }
 }
@@ -25,10 +26,10 @@
     text-transform: uppercase;
     margin-bottom: $spacing-xxl;
     & .teamA {
-        color: $yellow;
+        @include color-team-a;
     }
     & .teamB {
-        color: $pink;
+        @include color-team-b;
     }
 }
 .buttons {

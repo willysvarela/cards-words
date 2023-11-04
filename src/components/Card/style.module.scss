@@ -1,10 +1,11 @@
+@use "@/styles/mixins" as *;
 @import "@/styles/variables.scss";
 .card {
     background-color: $white;
     max-width: 300px;
     margin: auto;
     .header {
-        background-color: $yellow;
+        @include background-team-a;
         text-transform: uppercase;
         text-align: center;
         display: flex;
@@ -38,12 +39,12 @@
 
     &.teamA {
         .header {
-            background-color: $yellow;
+            @include background-team-a;
         }
     }
     &.teamB {
         .header {
-            background-color: $pink;
+            @include background-team-b;
         }
     }
 }

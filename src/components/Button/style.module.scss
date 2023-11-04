@@ -2,16 +2,17 @@
 @import "@/styles/variables.scss";
 .button {
     all: unset;
-    max-width: rem(280px);
     text-transform: uppercase;
     padding: 8px 48px;
     background-color: $green;
     font-size: $text-large;
     text-align: center;
     cursor: pointer;
+    transition: 0.5s;
     &:hover,
     &:active {
         background-color: $green-80;
+        transform: scale3d(0.95, 0.95, 0.95);
     }
     &.button-green,
     &.button-default {

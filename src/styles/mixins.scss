@@ -5,3 +5,19 @@
 @mixin shadow-l {
     box-shadow: 5px 7px 10px $black-25;
 }
+
+@mixin color-team-a {
+    color: $yellow;
+}
+
+@mixin color-team-b {
+    color: $pink;
+}
+
+@mixin background-team-a {
+    background-color: $yellow;
+}
+
+@mixin background-team-b {
+    background-color: $pink;
+}
